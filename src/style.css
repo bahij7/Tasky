@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  background: #202123;
+  color: white;
+}
+.home{
+  width: 100%;
+}
+
+.intro{
+  /* background: lightblue; */
+  width: 70%;
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+button{
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: .4s all ease;
+}
+
+button:active{
+  transform: rotate(20deg);
+}
+
+.tip{
+  width: fit-content;
+  background: #121212;
+  color: #f2f2f284;
+  padding: 5px 20px;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.intro-head{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.intro h1{
+  font-size: 50px;
+  width: 40%;
+  font-weight: 400;
+}
+
+.intro span{
+  font-weight: 600;
+}
+
+.intro-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form{
+  width: 100%;
+  margin-top: 2%;
+  /* background: yellow; */
+}
+
+input{
+  all: unset;
+  border: 1px solid #f2f2f284;
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+
+form .head{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2%;
+}
+
+form .head input:first-child{
+  width: 60%;
+}
+
+form .head select{
+  width: 40%;
+  border: 1px solid #f2f2f284;
+  background: none;
+  font-size: 16px;
+  color: #f2f2f284;
+  padding: 12px 20px;
+  border-radius: 20px;
+  appearance: none;
+}
+
+form .head select option{
+  outline: unset;
+  border: none;
+  background: #121212;
+}
+
+
+form .body{
+  width: 100%;
+  margin-top: 2%;
+  /* background: lightblue; */
+}
+
+textarea{
+  all: unset;
+  width: 100%;
+  height: 120px;
+  padding: 12px 20px;
+  border: 1px solid #f2f2f284;
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: none; /* Prevent resizing of the textarea */
+  overflow-y: auto; /* Enable vertical scrolling when needed */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  white-space: pre-wrap;
+ 
+}
+
+form .foot{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  margin-top: 2%;
+}
+
+form .foot input{
+  border: none;
+  background: lightgreen;
+  cursor: pointer;
+  padding: 10px 80px;
+  color: #121212;
+}
