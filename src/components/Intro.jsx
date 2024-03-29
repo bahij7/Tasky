@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Card from './Card'
 
 function Intro() {
     const [tasks, setTasks] = useState([])
@@ -37,6 +38,10 @@ function Intro() {
             alert('Waa')
         }
     }
+
+    const handleDelete = ()=>{
+
+    }
   return (
     <div className='intro'>
         <div className="tip">TASKY</div>
@@ -58,9 +63,9 @@ function Intro() {
                     <input type='text' placeholder='Title' onChange={(e)=>setTitle(e.target.value)}/>
 
                     <select value={categ} onChange={handleChange}>
-                        <option value="">Select an option</option>
+                        <option value="" disabled>Select a Status</option>
                         <option value="Pending">Pending</option>
-                        <option value="Proccessing">Proccessing..</option>
+                        <option value="Proccessing..">Proccessing..</option>
                         <option value="Completed">Completed</option>
                         <option value="Canceled">Canceled</option>
                     </select>
@@ -81,15 +86,22 @@ function Intro() {
 
        
         <div>
-                <ul>
-                    {tasks.map((task)=>(
-                        <li>{task.title}, {task.desc} {task.categ}</li>
-                    ))}
-                </ul>
                 
+
+                <div className="cards">
+                    {tasks.map((task)=>(
+                        <Card title={task.title} desc={task.desc} categ={task.categ}/>
+                    ))}
+                    
+                </div>
         </div>
-      
-       
+
+        {tasks.length >= 6 && 
+            <div className='delete'>
+                <input type='button' value='Delete All' onClick={handleDelete}/>
+            </div>
+            }
+
 
     </div>
   )
