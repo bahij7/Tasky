@@ -158,7 +158,7 @@ form .foot input{
 
 .card{
   background: #121212;
-  color: #f2f2f284;
+  color: white;
   width: 28%;
   height: fit-content;
   padding: 10px 20px;
@@ -260,7 +260,6 @@ form .foot input{
   .card{
     width: 100%;
     padding: 10px 16px;
-
   }
 
 
