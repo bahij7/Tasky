@@ -4,15 +4,23 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Rubik';
-  background: #202123;
+  background: black;
   color: white;
+  background-image: url(components/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+::selection{
+  background : #891616;
+}
+
 .home{
   width: 100%;
 }
 
 .intro{
-  /* background: lightblue; */
   width: 85%;
   height: 100vh;
   margin: 0 auto;
@@ -32,7 +40,7 @@ button:active{
 
 .tip{
   width: fit-content;
-  background: #121212;
+  background: #000000;
   color: #f2f2f284;
   padding: 5px 20px;
   font-size: 10px;
@@ -70,9 +78,11 @@ form{
 
 input{
   all: unset;
+  background: #00000043;
+  backdrop-filter: blur(4px);
   border: 1px solid #f2f2f284;
   padding: 12px 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 form .head{
@@ -95,7 +105,7 @@ form .head select{
   font-size: 16px;
   color: #f2f2f284;
   padding: 12px 20px;
-  border-radius: 20px;
+  border-radius: 8px;
   appearance: none;
 }
 
@@ -109,16 +119,17 @@ form .head select option{
 form .body{
   width: 100%;
   margin-top: 2%;
-  /* background: lightblue; */
 }
 
 textarea{
   all: unset;
+  background: #00000043;
+  backdrop-filter: blur(4px);
   width: 100%;
   height: 120px;
   padding: 12px 20px;
   border: 1px solid #f2f2f284;
-  border-radius: 10px;
+  border-radius: 8px; 
   box-sizing: border-box;
   resize: none; /* Prevent resizing of the textarea */
   overflow-y: auto; /* Enable vertical scrolling when needed */
@@ -131,16 +142,27 @@ form .foot{
   display: flex;
   align-items: center;
   justify-content: end;
+  gap: 8px;
   width: 100%;
   margin-top: 2%;
 }
 
-form .foot input{
+form .foot input:first-child{
   border: none;
-  background: lightgreen;
+  background: #303030;
   cursor: pointer;
-  padding: 10px 80px;
-  color: #121212;
+  color: white;
+  border-radius: 8px;
+}
+
+
+form .foot input:last-child{
+  border: none;
+  background: #00753b;
+  cursor: pointer;
+  padding-inline: 80px;
+  color: white;
+  border-radius: 8px;
 }
 
 .cards{
@@ -151,18 +173,20 @@ form .foot input{
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 2%;
+  margin-top: 4%;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .card{
-  background: #121212;
+  background: #12121243;
+  backdrop-filter: blur(4px);
   color: white;
   width: 28%;
   height: fit-content;
   padding: 10px 20px;
   border-radius: 10px;
+  border: 1px solid #ffffff1b;
 }
 
 .card-head{
@@ -176,32 +200,57 @@ form .foot input{
 .card-head div:first-child{
   font-weight: 500;
   width: 60%;
-  font-size: 18px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .card-head div:last-child{
-  min-width: 20%;
+  padding: 6px;
+  border-radius: 100%;
   text-align: center;
   background: #121212;
-  color: #f2f2f284;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  font-size: 8px;
-  letter-spacing: 2px;
 }
 
 .card-head .Canceled{
   background: #c61025 !important;
+  opacity: 30%;
 }
+
+.Canceled{
+  background: #c6102520 !important;
+  opacity: 30%;
+}
+
 
 .card-head .Completed{
   background: #00753b !important;
 }
 
+.Completed{
+  background: #00753b20 !important;
+  border: 1px solid #00753b5a;
+}
+
 .card-head .Pending{
-  background: #e53733 !important;
+  position: relative;
+  background: #ededed !important;
+  animation: growAndShrink 1.5s ease-in-out infinite; 
+}
+
+@keyframes growAndShrink {
+  0% {
+    opacity: 100%;
+    padding: 6px;
+  }
+  50% {
+    opacity: 20%;
+    padding: 5px;
+  }
+  100% {
+    opacity: 100%;
+    padding: 6px;
+  }
 }
 
 .card-body{
@@ -211,10 +260,12 @@ form .foot input{
   text-overflow: ellipsis;
   white-space: pre-line;
   text-align: start;
+  color: #ffffffcc;
 }
 
 .delete{
-  margin-top: 2%;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 .delete input{

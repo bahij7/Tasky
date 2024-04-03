@@ -26,7 +26,7 @@ function Intro() {
                 desc : desc
             }
 
-        setTasks([...tasks, newTask])
+        setTasks([newTask, ...tasks])
 
         setTitle('')
         setDesc('')
@@ -40,7 +40,7 @@ function Intro() {
     }
 
     const handleDelete = ()=>{
-
+        setTasks([])
     }
   return (
     <div className='intro'>
@@ -65,7 +65,6 @@ function Intro() {
                     <select value={categ} onChange={handleChange}>
                         <option value="" disabled>Select a Status</option>
                         <option value="Pending">Pending</option>
-                        <option value="Proccessing..">Proccessing..</option>
                         <option value="Completed">Completed</option>
                         <option value="Canceled">Canceled</option>
                     </select>
@@ -77,7 +76,8 @@ function Intro() {
                 </div>
 
                 <div className="foot">
-                    <input type='submit' value='V' onClick={handleTask}/>
+                    <input type='button' value='X' onClick={openTask}/>
+                    <input type='submit' value='Send' onClick={handleTask}/>
                 </div>
             </form>
 
@@ -96,7 +96,7 @@ function Intro() {
                 </div>
         </div>
 
-        {tasks.length >= 6 && 
+        {tasks.length >= 1 && 
             <div className='delete'>
                 <input type='button' value='Delete All' onClick={handleDelete}/>
             </div>
